@@ -1,0 +1,7 @@
+{
+  "if": {
+    "field": "tags.costCentre",
+    "exists": "false"
+  },
+  "then": { "effect": "audit" }
+}

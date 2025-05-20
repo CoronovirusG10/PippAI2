@@ -1,0 +1,17 @@
+name: k6 Load Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  k6:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install k6
+        run: |
+          curl -sSL https://github.com/grafana/k6/releases/download/v0.49.0/k6-v0.49.0-linux-amd64.tar.gz | tar -xz
+          sudo mv k6-v0.49.0-linux-amd64/k6 /usr/local/bin/
+      - name: Run 30-second soak test
+        run: |
+          k6 run --duration 30s --vus 20 tests/load.js
