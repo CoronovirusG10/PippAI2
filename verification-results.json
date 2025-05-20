@@ -1,0 +1,56 @@
+[]
+{"timestamp":"2025-05-20T20:43:19Z","test":"Azure Extension: front-door","result":"PASS","details":"Installed"}
+{"timestamp":"2025-05-20T20:43:20Z","test":"Resource Group: pippaioflondoncdx2","result":"PASS","details":"Exists in swedencentral"}
+{"timestamp":"2025-05-20T20:43:21Z","test":"Resource Group Lock","result":"PASS","details":"Delete lock exists"}
+{"timestamp":"2025-05-20T20:43:22Z","test":"Log Analytics: pippaioflondoncdx2-logs","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:43:25Z","test":"App Insights: pippaioflondoncdx2-ai","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:43:28Z","test":"App Insights Workspace Connection","result":"PASS","details":"Connected to Log Analytics"}
+{"timestamp":"2025-05-20T20:43:29Z","test":"Key Vault: pippaioflondoncdx2-kv","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:43:30Z","test":"Key Vault Soft Delete","result":"PASS","details":"Enabled"}
+{"timestamp":"2025-05-20T20:43:30Z","test":"Key Vault Purge Protection","result":"PASS","details":"Enabled"}
+{"timestamp":"2025-05-20T20:43:30Z","test":"Key Vault RBAC Authorization","result":"PASS","details":"Enabled"}
+{"timestamp":"2025-05-20T20:43:33Z","test":"Key Vault Secret: CosmosConn","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:43:34Z","test":"Key Vault Secret: StorageConn","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:43:35Z","test":"Cosmos DB: pippaioflondoncdx2-cosmos","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:43:36Z","test":"Cosmos DB Backup Policy","result":"PASS","details":"Continuous backup enabled"}
+{"timestamp":"2025-05-20T20:43:38Z","test":"Cosmos DB Database: chatdb","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:43:40Z","test":"Cosmos DB Container: chatdb.chats","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:43:42Z","test":"Cosmos DB Container: simplechat.chats","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:43:44Z","test":"Cosmos DB Analytical Storage","result":"WARN","details":"Not enabled - this was noted as an issue in logs"}
+{"timestamp":"2025-05-20T20:43:45Z","test":"Storage Account: pippaioflondoncdx2store","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:43:46Z","test":"Storage Account TLS Version","result":"PASS","details":"TLS 1.2 enforced"}
+{"timestamp":"2025-05-20T20:43:48Z","test":"Storage Account Public Access","result":"PASS","details":"Enabled as per architecture doc"}
+{"timestamp":"2025-05-20T20:43:49Z","test":"App Service Plan: pippaioflondoncdx2-plan","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:43:50Z","test":"App Service Plan SKU","result":"PASS","details":"P1v3 as specified"}
+{"timestamp":"2025-05-20T20:43:52Z","test":"App Service Plan OS","result":"FAIL","details":"Not Linux"}
+{"timestamp":"2025-05-20T20:43:56Z","test":"Web App: pippaioflondoncdx2-app","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:43:58Z","test":"Web App Managed Identity","result":"FAIL","details":"Not enabled"}
+{"timestamp":"2025-05-20T20:44:08Z","test":"Web App KeyVault Reference","result":"FAIL","details":"CosmosConn does not reference KeyVault correctly"}
+{"timestamp":"2025-05-20T20:44:14Z","test":"Web App Staging Slot","result":"FAIL","details":"Not found"}
+{"timestamp":"2025-05-20T20:44:21Z","test":"Front Door Profile: pippaioflondoncdx2-afd","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:44:22Z","test":"Front Door SKU","result":"PASS","details":"Premium as specified"}
+{"timestamp":"2025-05-20T20:44:24Z","test":"Front Door Endpoint: chat-ep","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:44:25Z","test":"Front Door WAF Policy Assignment","result":"WARN","details":"WAF policy may not be assigned correctly (was identified as an issue in logs)"}
+{"timestamp":"2025-05-20T20:44:26Z","test":"Front Door Origin Group: og-app","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:44:27Z","test":"Front Door Origin: chat-origin","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:44:28Z","test":"Front Door Origin Host","result":"PASS","details":"Correctly points to App Service"}
+{"timestamp":"2025-05-20T20:44:29Z","test":"Front Door Route","result":"PASS","details":"Exists (either as 'chatroute' or 'https-route')"}
+{"timestamp":"2025-05-20T20:44:31Z","test":"Front Door WAF Policy: chat-waf","result":"WARN","details":"Not found - this was noted as an issue in logs, may be managed manually"}
+{"timestamp":"2025-05-20T20:44:32Z","test":"OpenAI: pippaioflondoncdx2-openai","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:44:33Z","test":"OpenAI Kind","result":"PASS","details":"Correct kind"}
+{"timestamp":"2025-05-20T20:44:33Z","test":"OpenAI Models (GPT-4o, GPT-4 Turbo)","result":"WARN","details":"Requires manual verification in Azure Portal"}
+{"timestamp":"2025-05-20T20:44:34Z","test":"Document Intelligence: pippaioflondoncdx2-docint","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:44:35Z","test":"Document Intelligence Kind","result":"PASS","details":"Correct kind (FormRecognizer)"}
+{"timestamp":"2025-05-20T20:44:36Z","test":"Speech Service: pippaioflondoncdx2-speech","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:44:38Z","test":"Speech Service Kind","result":"PASS","details":"Correct kind"}
+{"timestamp":"2025-05-20T20:44:39Z","test":"AI Search: pippaioflondoncdx2-search","result":"PASS","details":"Exists"}
+{"timestamp":"2025-05-20T20:44:40Z","test":"AI Search SKU","result":"PASS","details":"Standard as specified"}
+{"timestamp":"2025-05-20T20:44:41Z","test":"AI Search Managed Identity","result":"PASS","details":"System-assigned identity enabled"}
+{"timestamp":"2025-05-20T20:44:43Z","test":"Defender for AppServices","result":"PASS","details":"Standard tier enabled"}
+{"timestamp":"2025-05-20T20:44:44Z","test":"Defender for CosmosDbs","result":"PASS","details":"Standard tier enabled"}
+{"timestamp":"2025-05-20T20:44:45Z","test":"Defender for StorageAccounts","result":"PASS","details":"Standard tier enabled"}
+{"timestamp":"2025-05-20T20:44:46Z","test":"Defender for ContainerRegistry","result":"PASS","details":"Standard tier enabled"}
+{"timestamp":"2025-05-20T20:44:48Z","test":"Tag Policy Assignment","result":"PASS","details":"RequireTagsEnforced policy is assigned to resource group"}
+{"timestamp":"2025-05-20T20:44:50Z","test":"Front Door Connectivity","result":"WARN","details":"Could not connect to endpoint or received non-2xx/3xx response"}
+{"timestamp":"2025-05-20T20:44:51Z","test":"App Service Connectivity","result":"PASS","details":"Successfully connected to endpoint"}
+{"timestamp":"2025-05-20T20:44:59Z","test":"Key Vault Reference: CosmosConn","result":"WARN","details":"App setting exists but does not reference Key Vault"}

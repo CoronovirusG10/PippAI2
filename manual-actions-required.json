@@ -1,0 +1,12 @@
+{"timestamp":"2025-05-20T20:44:59Z","manual_actions":[
+"OpenAIModels: Verify GPT-4o and GPT-4 Turbo models are deployed as specified in manual-steps-o4.md",
+"FrontDoorConnectivity: Front Door endpoint connectivity check failed. Verify routing and origin health.",
+"AppSettingKeyVault_CosmosConn: App setting CosmosConn should reference Key Vault for security",
+"CosmosAnalyticalStorage: Analytical storage could not be enabled via CLI. Requires recreation of Cosmos account or manual configuration.",
+"AppServicePlanOS: App Service Plan is not Linux. Cannot change OS of existing plan, requires recreation.",
+"WAFPolicyAssignment: WAF policy assignment to Front Door endpoint needs manual verification and possible fix.",
+"WAFPolicy: WAF policy missing. See manual-steps-o4.md for configuration instructions.",
+"OpenAIModels: Verify GPT-4o and GPT-4 Turbo models are deployed as specified in manual-steps-o4.md",
+"FrontDoorConnectivity: Front Door endpoint connectivity check failed. Verify routing and origin health.",
+"AppSettingKeyVault_CosmosConn: App setting CosmosConn should reference Key Vault for security",
+]}

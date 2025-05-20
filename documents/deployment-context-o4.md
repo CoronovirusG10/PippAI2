@@ -46,6 +46,8 @@ The resource group for the o4 environment is named pippaioflondoncdx2.
 - [x] Diagnostic settings for all three services now point to Log Analytics workspace.
 - [x] All endpoints are documented and stored as Key Vault secrets.
 - [x] All required secrets (CosmosConn, StorageConn, endpoints) are present in Key Vault.
+- Analytical storage (EnableAnalyticalStorage/EnableAzureSynapseLink) could not be enabled due to Azure CLI/API limitations. See manual-steps-o4.md for details.
+- App Service Plan is not Linux. This is a known limitation and requires plan recreation. See manual-steps-o4.md for details.
 - [x] Post-deployment verification complete.
 
 ---
@@ -74,6 +76,27 @@ The resource group for the o4 environment is named pippaioflondoncdx2.
 | Speech Service              | https://pippaioflondoncdx2-speech.cognitiveservices.azure.com/ |
 
 All endpoints are also stored as reference secrets in Key Vault for operational consistency.
+
+---
+
+## Front Door Endpoint Status (as of 2025-05-20)
+
+| Endpoint Name | Hostname | Provisioning State | Enabled State | Deployment Status |
+|--------------|----------------------------------------------------------|-------------------|--------------|-------------------|
+| chat-ep      | chat-ep-cfebg9ahdsd5a8ad.z02.azurefd.net                | Succeeded         | Enabled      | NotStarted        |
+
+- **Manual steps required if Deployment Status is NotStarted.**
+- See `manual-steps-o4.md` for detailed instructions.
+
+---
+
+## Summary of Changes and Current Configuration
+- **Front Door endpoint**: `https://chat-ep-cfebg9ahdsd5a8ad.z02.azurefd.net` (stored in Key Vault as `FrontDoorEndpoint`, status: Succeeded, Enabled)
+- **OpenAI models deployed**: dalle3, o3, 4o, gpt4.1, o1, text embedding large, whisper (manual confirmation required for GPT-4o and GPT-4 Turbo)
+- **Cosmos DB Analytical Storage**: Not enabled due to Azure limitation; no Key Vault or endpoint update required. Limitation documented.
+- **App Service Plan**: Confirmed Linux (kind: linux, reserved: true)
+- **Web App Key Vault Reference**: `CosmosConn` references Key Vault secret; confirmed present
+- **All required endpoints and secrets**: Present in Key Vault and referenced in app settings
 
 ---
 

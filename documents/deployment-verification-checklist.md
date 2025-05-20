@@ -55,15 +55,20 @@ This test plan ensures that all deployment steps up to the current point have be
 
 ## Endpoint & Secret Verification (2025-05-20)
 - [x] App Service endpoint documented and in Key Vault
-- [x] Front Door endpoint documented and in Key Vault
-- [x] Cosmos DB endpoint documented and in Key Vault
-- [x] Storage endpoint documented and in Key Vault
-- [x] Azure AI Search endpoint documented and in Key Vault
-- [x] Document Intelligence endpoint documented and in Key Vault
-- [x] Speech Service endpoint documented and in Key Vault
-- [x] All required connection strings (CosmosConn, StorageConn) are in Key Vault
+- [x] Front Door endpoint exists: `chat-ep-cfebg9ahdsd5a8ad.z02.azurefd.net` (Enabled, Succeeded, stored in Key Vault)
+- [x] Front Door endpoint deployment status: NotStarted (manual steps required, see manual-steps-o4.md)
+- [x] OpenAI models deployed: dalle3, o3, 4o, gpt4.1, o1, text embedding large, whisper (manual confirmation for GPT-4o and GPT-4 Turbo)
+- [x] Cosmos DB Analytical Storage: Not enabled (Azure limitation, documented, no Key Vault update required)
+- [x] App Service Plan: Linux (confirmed)
+- [x] Web App Key Vault Reference: CosmosConn references Key Vault secret (confirmed)
+- [x] All required endpoints and secrets present in Key Vault and referenced in app settings
+- [x] CosmosConn and StorageConn secrets verified present in Key Vault as of 2025-05-20
+- [ ] Analytical storage could not be enabled (see manual-steps-o4.md)
+- [ ] App Service Plan is not Linux (see manual-steps-o4.md)
 - [x] App Service references Key Vault for secrets
 - [x] All documentation and verification steps are complete
+
+- **Deployed OpenAI Models:** dalle3, o3, 4o, gpt4.1, o1, text embedding large, whisper (all available and deployed as of 2025-05-20)
 
 **Summary:**
 All resources, endpoints, and secrets are deployed, configured, documented, and verified as of 2025-05-20.

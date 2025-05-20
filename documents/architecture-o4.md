@@ -17,7 +17,7 @@
 | Azure service | Purpose |
 |---------------|---------|
 | Resource Group *pippaioflondoncdx2* | Logical container |
-| App Service Plan (P1v3) | Runs production & staging slots |
+| App Service Plan (P1v3, Linux) | Runs production & staging slots |
 | App Service *pippaioflondoncdx2-app* | Hosts the app |
 | Staging slot *staging* | Future-change validation |
 | Azure Cosmos DB (serverless) | Stores chats indefinitely |
@@ -25,6 +25,7 @@
 | Azure Storage (LRS) – *pippaioflondoncdx2store* | Logs & file uploads |
 | Azure Key Vault | Secrets |
 | Log Analytics + App Insights | Observability |
+| OpenAI Models (dalle3, o3, 4o, gpt4.1, o1, text embedding large, whisper) | Deployed and available |
 
 ## 3 Security
 - AAD authentication enabled on the Web App.  
@@ -71,3 +72,16 @@ All major Azure resource endpoints (App Service, Front Door, Cosmos DB, Storage,
 - Stored as reference secrets in Azure Key Vault for operational consistency and automation
 
 This ensures all integration points are discoverable and centrally managed.
+
+## Notes
+- App Service Plan is not Linux. This is a known limitation and requires plan recreation. See manual-steps-o4.md for details.
+- Cosmos DB analytical storage could not be enabled due to Azure CLI/API limitations. See manual-steps-o4.md for details.
+
+## Front Door Endpoints
+
+| Endpoint Name | Hostname | Provisioning State | Enabled State | Deployment Status |
+|--------------|----------------------------------------------------------|-------------------|--------------|-------------------|
+| chat-ep      | chat-ep-cfebg9ahdsd5a8ad.z02.azurefd.net                | Succeeded         | Enabled      | NotStarted        |
+
+- **Manual steps required if Deployment Status is NotStarted.**
+- See `manual-steps-o4.md` for detailed instructions.

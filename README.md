@@ -948,7 +948,7 @@ Key configuration sections include:
 
 To run the application in Azure Government cloud:
 
-1. **Deploy Resources**: Provision all necessary Azure resources (App Service, OpenAI, Cosmos DB, etc.) within your Azure Government subscription and appropriate Gov regions.
+1. **Deploy Resources**
 
 2. **Update Environment Variable**:
 
@@ -1243,7 +1243,7 @@ Services like Azure OpenAI, Document Intelligence, Content Safety, Speech Servic
       - [**File Processing Logs**](#file-processing-logs)
   - [Roadmap](#roadmap)
   - [Latest Features](#latest-features)
-    - [(v0.212.79)](#v021279)
+    - [(v0.212.91)](#v021291)
       - [New Features](#new-features)
       - [Bug Fixes](#bug-fixes)
   - [Release Notes](#release-notes)
