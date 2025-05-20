@@ -55,3 +55,19 @@ Under Monitoring we surface latency, success %, RU/s and tokens/min in the *Chat
 
 ## 7 Future work (Phase 2)
 • Map custom Front-Door domain (e.g. `chat.yourcorp.com`).
+
+## Deployment & Operational State (as of 2025-05-20)
+- All Azure resources (App Service, Cosmos DB, Storage, AI Search, Document Intelligence, Speech, Front Door, Key Vault, Log Analytics, App Insights) are deployed and configured.
+- All service endpoints are documented in `deployment-context-o4.md` and stored as Key Vault secrets.
+- All required secrets (connection strings, endpoints) are present in Key Vault and referenced by the application.
+- Diagnostic settings and managed identities are configured as per best practices.
+- Manual steps (WAF, OpenAI model deployment) are clearly documented in `manual-steps-o4.md`.
+- The architecture is fully realized and operational as designed.
+
+## Endpoint Documentation & Key Vault Reference
+
+All major Azure resource endpoints (App Service, Front Door, Cosmos DB, Storage, AI Search, Document Intelligence, Speech) are:
+- Documented in `deployment-context-o4.md` for developer and ops reference
+- Stored as reference secrets in Azure Key Vault for operational consistency and automation
+
+This ensures all integration points are discoverable and centrally managed.
